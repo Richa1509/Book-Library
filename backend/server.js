@@ -6,11 +6,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const bookRoutes = require('./routes/bookRoutes');
+const { errorHandler } = require("./middleware/errorMiddleware");
+
 
 const app = express();
 app.use("/api", bookRoutes);
 
 const PORT = process.env.PORT || 5000;
+
 
 connectDB(); // Connect to MongoDB
 
