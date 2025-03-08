@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Library</h1>
+        
+        <!-- Add Book Form -->
+        <div class="form-container">
+            <h2>Add a New Book</h2>
+            <form id="addBookForm" class="form">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <input type="text" id="genre" placeholder="Genre" required>
+                <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5">
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <h2>Search & Filter Books</h2>
+            <div class="filter-bar">
+                <input type="number" id="filterPage" placeholder="Page Number" min="1">
+                <input type="number" id="filterLimit" placeholder="Limit Per Page" min="1">
+                <button id="searchPagination">Fetch with Pagination</button>
+            </div>
+            <div class="filter-bar">
+                <input type="text" id="filterGenre" placeholder="Filter by Genre">
+                <button id="searchGenre">Search by Genre</button>
+            </div>
+            <div class="filter-bar">
+                <input type="number" id="filterRating" placeholder="Get Books with Rating ≥ 4.5" min="1" max="5">
+                <button id="searchRating">Search by Rating</button>
+            </div>
+            <div class="filter-bar">
+                <input type="text" id="searchBookId" placeholder="Search Book by ID">
+                <button id="searchById">Search by ID</button>
+            </div>
+        </div>
+        
+        <!-- Book List -->
+        <div class="book-list-container">
+            <h2>Book List</h2>
+            <ul id="bookList" class="book-list"></ul>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageNumber">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
